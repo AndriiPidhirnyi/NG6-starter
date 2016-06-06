@@ -27,7 +27,7 @@ module.exports = function (config) {
 
     webpack: {
       devtool: 'inline-source-map',
-      module: {
+      module : {
         loaders: [
           { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
           { test: /\.html/, loader: 'raw' },
@@ -45,12 +45,12 @@ module.exports = function (config) {
     reporters: ['spec'],
 
     specReporter: {
-      maxLogLines: 5,              // limit number of lines logged per test
-      suppressErrorSummary: true,  // do not print error summary
-      suppressFailed: false,       // do not print information about failed tests
-      suppressPassed: true,        // do not print information about passed tests
-      suppressSkipped: true,       // do not print information about skipped tests
-      showSpecTiming: true         // print the time elapsed for each spec
+      maxLogLines         : 5,       // limit number of lines logged per test
+      suppressErrorSummary: true,    // do not print error summary
+      suppressFailed      : false,   // do not print information about failed tests
+      suppressPassed      : true,    // do not print information about passed tests
+      suppressSkipped     : true,    // do not print information about skipped tests
+      showSpecTiming      : true     // print the time elapsed for each spec
     },
 
     // web server port

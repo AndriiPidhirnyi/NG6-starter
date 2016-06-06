@@ -55,7 +55,7 @@
     "yargs": "^3.9.0"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start config/tests/karma.conf.js"
   },
   "keywords": [
     "angular",
