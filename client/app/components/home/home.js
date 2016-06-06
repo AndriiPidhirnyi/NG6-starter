@@ -1,5 +1,5 @@
-import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import angular       from 'angular';
+import uiRouter      from 'angular-ui-router';
 import homeComponent from './home.component';
 
 let homeModule = angular.module('home', [
@@ -7,13 +7,13 @@ let homeModule = angular.module('home', [
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {
-  "ngInject";
+  'ngInject';
 
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('home', {
-      url: '/',
+      url     : '/',
       template: '<home></home>'
     });
 })

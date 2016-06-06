@@ -1,13 +1,13 @@
-import template from './home.html';
+import template   from './home.html';
 import controller from './home.controller';
 import './home.scss';
 
 let homeComponent = {
-  restrict: 'E',
-  bindings: {},
+  restrict    : 'E',
+  bindings    : {},
+  controllerAs: 'vm',
   template,
-  controller,
-  controllerAs: 'vm'
+  controller
 };
 
 export default homeComponent;
