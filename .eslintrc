@@ -4,18 +4,18 @@
     "angular"
   ],
   "globals": {
-    "expect": true,
-    "it": true,
-    "describe": true,
-    "fdescribe": true,
+    "expect"    : true,
+    "it"        : true,
+    "describe"  : true,
+    "fdescribe" : true,
     "beforeEach": true,
-    "afterEach": true,
-    "inject": true
+    "afterEach" : true,
+    "inject"    : true
   },
-  "rules"  : {
-    "semi": ["error", "always", { "omitLastInOneLineBlock": false }],
-    "no-extra-semi": ["error"],
+  "rules": {
+    "semi"           : ["error", "always", { "omitLastInOneLineBlock": false }],
+    "no-extra-semi"  : ["error"],
     "no-multi-spaces": ["error", { "exceptions":  { "ImportDeclaration": true, "VariableDeclarator": true } }],
-    "key-spacing": ["error", { "align": "colon" }]
+    "key-spacing"    : ["error", { "align": "colon" }]
   }
 }
