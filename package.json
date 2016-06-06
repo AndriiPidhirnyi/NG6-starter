@@ -54,10 +54,10 @@
     "webpack-hot-middleware"        : "^2.6.0",
     "yargs"                         : "^3.9.0"
   },
-  "scripts"        : {
-    "test" : "karma start config/tests/karma.conf.js",
-    "dev"  : "gulp",
-    "build": "gulp webpack",
+  "scripts": {
+    "test"     : "karma start config/tests/karma.conf.js",
+    "dev"      : "gulp",
+    "build"    : "gulp webpack",
     "component": "gulp component --name"
   },
   "keywords"       : [
