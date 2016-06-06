@@ -1,14 +1,13 @@
-import NavbarModule from './navbar'
+import NavbarModule     from './navbar';
 import NavbarController from './navbar.controller';
-import NavbarComponent from './navbar.component';
-import NavbarTemplate from './navbar.html';
+import NavbarComponent  from './navbar.component';
+import NavbarTemplate   from './navbar.html';
 
 describe('Navbar', () => {
-  let $rootScope, makeController;
+  let makeController;
 
   beforeEach(window.module(NavbarModule.name));
-  beforeEach(inject((_$rootScope_) => {
-    $rootScope = _$rootScope_;
+  beforeEach(inject(() => {
     makeController = () => {
       return new NavbarController();
     };
@@ -22,7 +21,7 @@ describe('Navbar', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller.name).toBeDefined();
     });
   });
 
@@ -30,24 +29,24 @@ describe('Navbar', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(NavbarTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(NavbarTemplate).toMatch(/{{\s?vm\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
-      // component/directive specs
-      let component = NavbarComponent;
+    // component/directive specs
+    let component = NavbarComponent;
 
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(NavbarTemplate);
-      });
+    it('includes the intended template', () => {
+      expect(component.template).toEqual(NavbarTemplate);
+    });
 
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
+    it('uses `controllerAs` syntax', () => {
+      expect(component.controllerAs).toBeDefined();
+    });
 
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(NavbarController);
-      });
+    it('invokes the right controller', () => {
+      expect(component.controller).toEqual(NavbarController);
+    });
   });
 });

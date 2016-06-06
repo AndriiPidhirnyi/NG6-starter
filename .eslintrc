@@ -1,7 +1,21 @@
 {
   "extends": "standard",
+  "plugins": [
+    "angular"
+  ],
+  "globals": {
+    "expect": true,
+    "it": true,
+    "describe": true,
+    "fdescribe": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "inject": true
+  },
   "rules"  : {
     "semi": ["error", "always", { "omitLastInOneLineBlock": false }],
-    "no-extra-semi": ["error"]
+    "no-extra-semi": ["error"],
+//    "no-multi-spaces": ["error", { exceptions: { "VariableDeclarator": true } }]
+    "no-multi-spaces": ["error", { "exceptions":  { "ImportDeclaration": true, "VariableDeclarator": true } }]
   }
 }

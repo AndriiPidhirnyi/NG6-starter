@@ -1,14 +1,13 @@
-import HeroModule from './hero'
+import HeroModule     from './hero';
 import HeroController from './hero.controller';
-import HeroComponent from './hero.component';
-import HeroTemplate from './hero.html';
+import HeroComponent  from './hero.component';
+import HeroTemplate   from './hero.html';
 
 describe('Hero', () => {
-  let $rootScope, makeController;
+  let makeController;
 
   beforeEach(window.module(HeroModule.name));
-  beforeEach(inject((_$rootScope_) => {
-    $rootScope = _$rootScope_;
+  beforeEach(inject(() => {
     makeController = () => {
       return new HeroController();
     };
@@ -22,7 +21,7 @@ describe('Hero', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller.name).toBeDefined();
     });
   });
 
@@ -30,24 +29,24 @@ describe('Hero', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(HeroTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(HeroTemplate).toMatch(/{{\s?vm\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
-      // component/directive specs
-      let component = HeroComponent;
+    // component/directive specs
+    let component = HeroComponent;
 
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(HeroTemplate);
-      });
+    it('includes the intended template', () => {
+      expect(component.template).toEqual(HeroTemplate);
+    });
 
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
+    it('uses `controllerAs` syntax', () => {
+      expect(component.controllerAs).toBeDefined();
+    });
 
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(HeroController);
-      });
+    it('invokes the right controller', () => {
+      expect(component.controller).toEqual(HeroController);
+    });
   });
 });

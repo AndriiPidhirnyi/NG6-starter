@@ -5,7 +5,7 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['jasmine'],
 
     // list of files/patterns to load in the browser
     files: [{ pattern: 'spec.bundle.js', watched: false }],
@@ -14,10 +14,9 @@ module.exports = function (config) {
     exclude: [],
 
     plugins: [
-      require('karma-chai'),
+      require('karma-jasmine'),
       require('karma-phantomjs-launcher'),
-      require('karma-mocha'),
-      require('karma-mocha-reporter'),
+      require('karma-spec-reporter'),
       require('karma-sourcemap-loader'),
       require('karma-webpack')
     ],
@@ -43,7 +42,16 @@ module.exports = function (config) {
     },
 
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['spec'],
+
+    specReporter: {
+      maxLogLines: 5,              // limit number of lines logged per test
+      suppressErrorSummary: true,  // do not print error summary
+      suppressFailed: false,       // do not print information about failed tests
+      suppressPassed: true,        // do not print information about passed tests
+      suppressSkipped: true,       // do not print information about skipped tests
+      showSpecTiming: true         // print the time elapsed for each spec
+    },
 
     // web server port
     port: 9876,
